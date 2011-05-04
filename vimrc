@@ -190,12 +190,12 @@ source ~/.vim/vimrc_autocorrect
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
-colorscheme xoria256
-"-----------------------------------------------------------------------------
+colorscheme desert
+	"-----------------------------------------------------------------------------
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 if has("gui_running")
-"    set guifont=Consolas:h11
+    set guifont=Monaco:h12
     if !exists("g:vimrcloaded")
         winpos 0 0
         if ! &diff
