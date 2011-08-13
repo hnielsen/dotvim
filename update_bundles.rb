@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Deprecated. Everything is under source control on github now, this should not be necessary any longer
 
 git_bundles = [ 
   "git://github.com/astashov/vim-ruby-debugger.git",
@@ -7,6 +8,7 @@ git_bundles = [
   "git://github.com/timcharper/textile.vim.git",
   "git://github.com/tpope/vim-cucumber.git",
   "git://github.com/tpope/vim-fugitive.git",
+  "git://github.com/tpope/vim-pathogen.git"
   "git://github.com/tpope/vim-git.git",
   "git://github.com/tpope/vim-haml.git",
   "git://github.com/tpope/vim-markdown.git",
@@ -30,6 +32,7 @@ require 'fileutils'
 require 'open-uri'
 
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+colors_dir = File.join(File.dirname(__FILE__), "colors")
 
 FileUtils.cd(bundles_dir)
 

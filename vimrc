@@ -1,3 +1,6 @@
+" Initialize Pathogen -- Important! Must be first line of vimrc!
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+
 "-----------------------------------------------------------------------------
 " Global Stuff
 "-----------------------------------------------------------------------------
@@ -13,9 +16,10 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Tabstops are 4 spaces
+" Tabstops are 4. If expandtab is set, tabs are converted to spaces
 set tabstop=4
 set shiftwidth=4
+" set expandtab
 
 " set the default clipboard to the system one
 set clipboard=unnamed
@@ -68,6 +72,9 @@ syntax on
 
 " Hide the mouse pointer while typing
 set mousehide
+
+" Show linenumbers
+set number
 
 " Set up the gui cursor to look nice
 set guicursor=n-v-c:block-Cursor-blinkon0
@@ -132,6 +139,8 @@ set diffopt+=iwhite
 
 " Enable search highlighting
 set hlsearch
+" Map <esc> to clear search highlighting after a search
+nnoremap <esc> :noh<return><esc>
 
 " Incrementally match the search
 set incsearch
@@ -190,12 +199,12 @@ source ~/.vim/vimrc_autocorrect
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
-colorscheme desert
+colorscheme molokai 
 	"-----------------------------------------------------------------------------
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 if has("gui_running")
-    set guifont=Monaco:h12
+    " set guifont=Monaco:h12
     if !exists("g:vimrcloaded")
         winpos 0 0
         if ! &diff
