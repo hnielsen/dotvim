@@ -19,10 +19,12 @@ filetype indent on
 " Tabstops are 4. If expandtab is set, tabs are converted to spaces
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set autoindent 
 " set expandtab
 
 " set the default clipboard to the system one
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " set the search scan to wrap lines
 set wrapscan
@@ -50,7 +52,13 @@ set hidden
 
 " Make the 'cw' and like commands put a $ at the end instead of just deleting
 " the text and replacing it
-set cpoptions=ces$
+" Caused conflicts with SnipMate plugin, causing 'no mapping found' errors
+" set cpoptions=ces$
+
+" Press Shift-Space (may not work on your system).
+:imap <S-Space> <Esc>
+" Try the following so Shift-Space also enters insert mode.
+:nmap <S-Space> i
 
 " Set the status line the way i like it
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
@@ -85,7 +93,7 @@ set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 " set the gui options the way I like
-set guioptions=ac
+set guioptions=acg
 
 " This is the timeout used while waiting for user input on a multi-keyed macro
 " or while just sitting and waiting for another key to be pressed measured
@@ -131,22 +139,23 @@ set textwidth=120
 " get rid of the silly characters in window separators
 set fillchars=""
 
-" Turn tabs into spaces
-" set expandtab
-
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
 
 " Enable search highlighting
 set hlsearch
+
 " Map <esc> to clear search highlighting after a search
 nnoremap <esc> :noh<return><esc>
 
 " Incrementally match the search
 set incsearch
 
+" Use BufKill to close buffer but keeping windows layout
+nmap ,bd :BD<cr>
+
 " set text wrapping toggles
-nmap <silent> ,w :set invwrap<CR>:set wrap?<CR>
+nmap <silent> ,ww :set invwrap<CR>:set wrap?<CR>
 
 " Run the command that was just yanked
 nmap <silent> ,rc :@"<cr>
@@ -190,6 +199,25 @@ noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
+
+
+"-----------------------------------------------------------------------------
+" NERD Tree Plugin Settings
+"-----------------------------------------------------------------------------
+" Toggle the NERD Tree on an off with F7
+nmap <F7> :NERDTreeToggle<CR>
+
+" Close the NERD Tree with Shift-F7
+nmap <S-F7> :NERDTreeClose<CR>
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+
+" Don't display these kinds of files
+" let NERDTreeIgnore=[ '\.ncb$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
+"                    \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$',
+"                    \ '\.embed\.manifest$', '\.embed\.manifest.res$',
+"                    \ '\.intermediate\.manifest$', '^mt.dep$' ]
 
 "-----------------------------------------------------------------------------
 " Correct common typing mistakes

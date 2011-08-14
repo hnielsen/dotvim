@@ -1,2 +1,2 @@
-colorscheme xoria256
-
+set background=dark
+colorscheme solarized
