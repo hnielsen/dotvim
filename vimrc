@@ -1,5 +1,9 @@
 " Initialize Pathogen -- Important! Must be first line of vimrc!
-source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+try
+    source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+catch
+    source ~/vimfiles/bundle/pathogen/autoload/pathogen.vim
+endtry
 
 "-----------------------------------------------------------------------------
 " Global Stuff
@@ -21,7 +25,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent 
-" set expandtab
+set expandtab
 
 " set the default clipboard to the system one
 set clipboard+=unnamed
@@ -56,9 +60,9 @@ set hidden
 " set cpoptions=ces$
 
 " Press Shift-Space (may not work on your system).
-:imap <S-Space> <Esc>
+:imap jj <Esc>
 " Try the following so Shift-Space also enters insert mode.
-:nmap <S-Space> i
+" :nmap <S-Space> i
 
 " Set the status line the way i like it
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
@@ -106,7 +110,7 @@ set guioptions=acg
 set timeoutlen=500
 
 " Keep some stuff in the history
-set history=100
+set history=1000
 
 " These commands open folds
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
@@ -128,7 +132,8 @@ set key=
 set wildmenu
 
 " Same as default except that I remove the 'u' option
-set complete=.,w,b,t
+" set complete=.,w,b,t
+set complete=.,t
 
 " When completing by tag, show the whole tag, not just the function name
 set showfulltag
@@ -159,6 +164,9 @@ nmap <silent> ,ww :set invwrap<CR>:set wrap?<CR>
 
 " Run the command that was just yanked
 nmap <silent> ,rc :@"<cr>
+
+"make Y consistent with C and D
+nnoremap Y y$
 
 " allow command line editing like emacs
 cnoremap <C-A>      <Home>
@@ -224,15 +232,15 @@ let NERDTreeShowBookmarks=1
 "-----------------------------------------------------------------------------
 source ~/.vim/vimrc_autocorrect
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-colorscheme molokai 
-	"-----------------------------------------------------------------------------
+"-----------------------------------------------------------------------------
 " Set up the window colors and size
 "-----------------------------------------------------------------------------
 if has("gui_running")
+    set t_Co=256
+    colorscheme molokai 
+
     " set guifont=Monaco:h12
+    " set guifont=Consolas:h12
     if !exists("g:vimrcloaded")
         winpos 0 0
         if ! &diff
@@ -241,6 +249,14 @@ if has("gui_running")
             winsize 227 90
         endif
         let g:vimrcloaded = 1
+    endif
+else
+    " If running in gnome-terminal, we have more colors available
+    if $COLORTERM == 'gnome-terminal'
+        set term=gnome-256color
+        colorscheme molokai
+    else
+        colorscheme default
     endif
 endif
 

@@ -61,3 +61,6 @@
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git://github.com/vim-scripts/bufkill.vim.git
+[submodule "bundle/endwise"]
+	path = bundle/endwise
+	url = git://github.com/tpope/vim-endwise.git
