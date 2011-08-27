@@ -58,8 +58,6 @@ set hidden
 
 " Press Shift-Space (may not work on your system).
 :imap jj <Esc>
-" Try the following so Shift-Space also enters insert mode.
-" :nmap <S-Space> i
 
 " Set the status line the way i like it
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
@@ -92,6 +90,11 @@ set guicursor+=o:hor50-Cursor
 set guicursor+=i-ci:ver25-Cursor
 set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+" Set options to accomodate vim-ragtag
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
 
 " set the gui options the way I like
 set guioptions=acg
