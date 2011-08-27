@@ -1,9 +1,6 @@
 " Initialize Pathogen -- Important! Must be first line of vimrc!
-try
-    source ~/.vim/bundle/pathogen/autoload/pathogen.vim
-catch
-    source ~/vimfiles/bundle/pathogen/autoload/pathogen.vim
-endtry
+" <sfile>:h is a special command, which uses the path of the file sourced, i.e. this file
+source <sfile>:h/bundle/pathogen/autoload/pathogen.vim
 
 "-----------------------------------------------------------------------------
 " Global Stuff
@@ -230,7 +227,7 @@ let NERDTreeShowBookmarks=1
 "-----------------------------------------------------------------------------
 " Correct common typing mistakes
 "-----------------------------------------------------------------------------
-source ~/.vim/vimrc_autocorrect
+source <sfile>:h/vimrc_autocorrect
 
 "-----------------------------------------------------------------------------
 " Set up the window colors and size
