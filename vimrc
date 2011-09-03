@@ -237,12 +237,12 @@ source <sfile>:h/vimrc_autocorrect
 "-----------------------------------------------------------------------------
 if has("gui_running")
     set t_Co=256
-    colorscheme molokai 
+    colorscheme xoria256 
 
     " set guifont=Monaco:h12
     " set guifont=Consolas:h12
     if !exists("g:vimrcloaded")
-        winpos 0 0
+        winpos 200 0
         if ! &diff
             winsize 130 90
         else
@@ -254,7 +254,7 @@ else
     " If running in gnome-terminal, we have more colors available
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
-        colorscheme molokai
+        colorscheme xoria256
     else
         colorscheme default
     endif

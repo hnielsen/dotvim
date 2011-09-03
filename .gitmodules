@@ -70,3 +70,9 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = git://github.com/mhz/vim-matchit.git
+[submodule "bundle/snipmate-snippets"]
+	path = bundle/snipmate-snippets
+	url = git://github.com/scrooloose/snipmate-snippets.git
+[submodule "bundle/vim-task"]
+	path = bundle/vim-task
+	url = git://github.com/samsonw/vim-task.git
