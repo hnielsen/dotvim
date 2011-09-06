@@ -76,3 +76,6 @@
 [submodule "bundle/vim-task"]
 	path = bundle/vim-task
 	url = git://github.com/samsonw/vim-task.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = git://github.com/fholgado/minibufexpl.vim.git

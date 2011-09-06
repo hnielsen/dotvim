@@ -159,6 +159,10 @@ set incsearch
 " Use BufKill to close buffer but keeping windows layout
 nmap ,bd :BD<cr>
 
+" MiniBufExplorer mappings
+" Enable Ctrl-Tab and Ctrl-Shift-Tab mappings
+let g:miniBufExplMapCTabSwitchBufs = 1
+
 " set text wrapping toggles
 nmap <silent> ,ww :set invwrap<CR>:set wrap?<CR>
 
