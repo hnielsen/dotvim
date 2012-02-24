@@ -71,9 +71,6 @@
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = git://github.com/mhz/vim-matchit.git
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git
