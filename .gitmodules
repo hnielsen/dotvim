@@ -1,9 +1,6 @@
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/ruby-debugger"]
-	path = bundle/ruby-debugger
-	url = git://github.com/astashov/vim-ruby-debugger.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
@@ -69,4 +66,4 @@
 	url = git://github.com/tpope/vim-ragtag.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
-	url = git://github.com/mhz/vim-matchit.git
+	url = git://github.com/tsaleh/vim-matchit.git

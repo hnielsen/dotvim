@@ -242,7 +242,7 @@ if has("gui_running")
     " set guifont=Monaco:h12
     " set guifont=Consolas:h12
     if !exists("g:vimrcloaded")
-        winpos 0 0
+        winpos 200 0
         if ! &diff
             winsize 130 90
         else
