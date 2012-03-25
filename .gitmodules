@@ -78,3 +78,9 @@
 [submodule "bundle/project"]
 	path = bundle/project
 	url = git://github.com/shemerey/vim-project.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/fuzzyfinder"]
+	path = bundle/fuzzyfinder
+	url = git://github.com/vim-scripts/FuzzyFinder.git
