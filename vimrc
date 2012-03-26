@@ -177,6 +177,9 @@ nnoremap ,cd :cd %:p:h<CR>
 " Alternatively, to do this automatically, uncomment line below
 set autochdir
 
+" Set up ,s to search-replace word under cursor
+nnoremap ,s :%s/\<<C-r><C-w>\>/
+
 " allow command line editing like emacs
 cnoremap <C-A>      <Home>
 cnoremap <C-B>      <Left>
