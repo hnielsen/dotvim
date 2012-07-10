@@ -172,11 +172,6 @@ nmap <silent> ,rc :@"<cr>
 "make Y consistent with C and D
 nnoremap Y y$
 
-" Change working directory to current file
-nnoremap ,cd :cd %:p:h<CR>
-" Alternatively, to do this automatically, uncomment line below
-set autochdir
-
 " allow command line editing like emacs
 cnoremap <C-A>      <Home>
 cnoremap <C-B>      <Left>
