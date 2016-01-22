@@ -13,7 +13,7 @@ Create symlinks
 Switch to the `~/.vim` directory, and fetch submodules:
 
     cd ~/.vim
-    git submodule update --init
+    git pull && git submodule update --init --recursive
 
 ## Updating bundles
 
